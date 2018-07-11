@@ -9,6 +9,9 @@ import org.apache.kafka.common.PartitionInfo;
 import org.apache.kafka.common.record.InvalidRecordException;
 import org.apache.kafka.common.utils.Utils;
 
+// Simple example of custom partitioner:
+// if a message equals to "Foo" it goes to the last partition,
+// otherwise we do simple hashing on the key and assign it to any other partition.
 public class FooPartitioner implements Partitioner {
 
 	public void configure(Map<String, ?> configs) {
@@ -39,5 +42,4 @@ public class FooPartitioner implements Partitioner {
         // Other records will get hashed to the rest of the partitions
         return (Math.abs(Utils.murmur2(keyBytes)) % (numPartitions - 1));
 	}
-	
 }

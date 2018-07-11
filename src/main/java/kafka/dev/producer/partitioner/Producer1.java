@@ -7,6 +7,7 @@ import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 
+// Simple "fire and forget" producer that uses the "custom FooPartitioner".
 public class Producer1 {
 	public static void main(String[] args) {
 		Properties kafkaProps = new Properties();
