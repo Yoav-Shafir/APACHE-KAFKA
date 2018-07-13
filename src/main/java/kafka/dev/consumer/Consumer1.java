@@ -29,6 +29,11 @@ public class Consumer1 {
 		props.put("key.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
 		props.put("value.deserializer", "org.apache.kafka.common.serialization.StringDeserializer");
 		
+		// more config:
+		props.put("enable.auto.commit", "true"); // This is already true by default.
+		props.put("auto.commit.interval.ms", "1000");
+		props.put("auto.offset.reset", "earliest");
+		
 		// Create a consumer.
 		KafkaConsumer<String, String> consumer = new KafkaConsumer<String, String>(props);
 		

@@ -1,4 +1,4 @@
-package kafka.dev.producer.partitioner;
+package kafka.dev.partitioner;
 
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;

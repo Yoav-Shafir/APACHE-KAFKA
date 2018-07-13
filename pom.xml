@@ -4,6 +4,10 @@
   <artifactId>kafka</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
+	<properties>
+		<avro.version>1.8.2</avro.version>
+	</properties>
+    
   <dependencies>
   	<!-- https://mvnrepository.com/artifact/org.apache.kafka/kafka -->
 		<dependency>
@@ -26,6 +30,26 @@
 		    <version>3.2.1</version>
 		</dependency>
 		
-		
+		 <!--Only dependency needed for the avro part-->
+	<!-- https://mvnrepository.com/artifact/org.apache.avro/avro -->
+	<dependency>
+		<groupId>org.apache.avro</groupId>
+		<artifactId>avro</artifactId>
+		<version>${avro.version}</version>
+</dependency>
   </dependencies>
+  
+  <build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.7.0</version>
+				<configuration>
+				<source>1.8</source>
+				<target>1.8</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>

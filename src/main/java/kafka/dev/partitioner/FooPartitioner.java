@@ -1,4 +1,4 @@
-package kafka.dev.producer.partitioner;
+package kafka.dev.partitioner;
 
 import java.util.List;
 import java.util.Map;

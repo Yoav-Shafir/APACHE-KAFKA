@@ -14,6 +14,10 @@ public class ProducerFireAndForget {
 		kafkaProps.put("key.serializer","org.apache.kafka.common.serialization.StringSerializer");
 		kafkaProps.put("value.serializer", "org.apache.kafka.common.serialization.StringSerializer");
 		
+		// more config:
+		kafkaProps.put("aks", "1");
+		kafkaProps.put("retries", "3");
+		
 		Producer<String, String> producer = new KafkaProducer<String, String>(kafkaProps);
 		ProducerRecord<String, String> record = new ProducerRecord<String, String>("topic_test", "key_test_1", "value_test_1");
 		
