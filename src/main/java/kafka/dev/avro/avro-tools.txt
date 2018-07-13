@@ -1,3 +1,15 @@
-# Compiling the schema
-java -jar /path/to/avro-tools-1.8.1.jar compile schema <schema file> <destination>
+# Download the avro-tools jar.
+wget http://central.maven.org/maven2/org/apache/avro/avro-tools/1.8.2/avro-tools-1.8.2.jar
+
+# Show help commands.
+$> java -jar avro-tools-1.8.1.jar
+
+# Compiling a schema: java -jar /path/to/avro-tools-1.8.1.jar compile schema <schema file> <destination>
 $> java -jar avro-tools-1.8.1.jar compile schema customer.avsc .
+
+# Read Avro file.
+java -jar ~/avro-tools-1.8.2.jar tojson --pretty customer-generic.avro 
+java -jar ~/avro-tools-1.8.2.jar tojson --pretty customer-specific.avro 
+
+# Getting the schema
+java -jar ~/avro-tools-1.8.2.jar getschema customer-specific.avro 
